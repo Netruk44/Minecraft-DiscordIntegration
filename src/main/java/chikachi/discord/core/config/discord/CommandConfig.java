@@ -50,9 +50,9 @@ public class CommandConfig {
         int argsCount = args.size();
         if (argsCount > 0) {
             for (int i = 0; i < argsCount; i++) {
-                cmd = cmd.replace("(?i){ARG_" + (i + 1) + "}", args.get(i));
+                cmd = cmd.replace("{ARG_" + (i + 1) + "}", args.get(i));
             }
-            cmd = cmd.replace("(?i){ARGS}", Joiner.on(' ').join(args));
+            cmd = cmd.replace("({ARGS}", Joiner.on(' ').join(args));
         }
         cmd = cmd.replaceAll("(?i)\\{(ARG_[0-9]+|ARGS)\\}", "");
 
